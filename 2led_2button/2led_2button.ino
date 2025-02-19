@@ -35,10 +35,5 @@ void loop() {
     delay(50);
     digitalWrite(ledBlue, LOW);
     delay(50);
-
-
   }
-
-
-
 }
