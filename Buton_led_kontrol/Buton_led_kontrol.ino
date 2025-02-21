@@ -4,7 +4,7 @@ int ledRed = 2;
 int ledGreen = 3;
 int ledBlue = 4;
 int ledYellow = 5;
-bool ledDurum = false;
+bool ledDurum = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -35,14 +35,15 @@ void loop() {
   }
 
   if (digitalRead(button2) == 1) {
-    delay(10);
-    while (digitalRead(button2) == 1);
-
     ledDurum = !ledDurum;
+    while(digitalRead(button2) == 1){
+      delay(100);
+    }
 
     digitalWrite(ledRed, ledDurum);
     digitalWrite(ledGreen, ledDurum);
     digitalWrite(ledBlue, ledDurum);
     digitalWrite(ledYellow, ledDurum);
+
   }
 }
